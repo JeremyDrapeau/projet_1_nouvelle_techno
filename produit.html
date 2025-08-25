@@ -5,6 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nos Glaçon!</title>
 </head>
+<style>
+    @font-face {
+        font-family: creme;
+        src: url(assets/fonts/PlaywriteCA-Regular.ttf);
+    }
+
+    .produits-container {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .produit {
+        background-color: white;
+        text-align: center;
+        font-size: large;
+        width: 200px;
+        border: 2px solid black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .produit>img {
+        margin-top: 2px;
+        width: 200px;
+        height: 200px;
+    }
+    .title {
+        font-family: creme;
+        font-size: 50px;
+    }
+    .vcontainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .separator {
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    .categorie {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items:  center;
+        width: 65%;
+        border-radius: 20px;
+        padding: 20px;
+        background-color: green;
+    }
+
+    @media only screen and (max-width: 900px) {
+        .produit>img {
+        margin-top: 2px;
+        width: 100px;
+        height: 100px;
+        }
+        .produit {
+        background-color: white;
+        text-align: center;
+        font-size:medium;
+        width: 100px;
+        border: 2px solid black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+        .categorie {
+            width: 80%;
+        }
+        .categorie>h1 {
+            font-size: x-large;
+        }
+    }
+
+</style>
 <body>
     <header>
         <nav style="display: flex; flex-direction: row;">
@@ -15,5 +93,50 @@
         </nav>
     </header>
     
+    <main class="vcontainer">
+        <h1 class="title">Produits</h1>
+
+        <div class="categorie">
+            <h1>Nos plus beaux produits disponible pour nos plus beaux clients!</h1>
+            <div class="produits-container">
+                <div class="produit">
+                    Baton glacé couleur Jaune soleil FCF
+                    <img src="assets/img/glace-jaune-soleil.jpg">
+                </div>
+                <div class="produit">
+                    Baton glacé couleur Rouge allura
+                    <img src="assets/img/glace-rouge-allura.jpg">
+                </div>
+                <div class="produit">
+                    Baton glacé couleur Carmin d'indigo
+                    <img src="assets/img/glace-indigo.jpg">
+                </div>
+                <div class="produit">
+                    Baton glacé couleur Phatlocyanine
+                    <img src="assets/img/glace-phatlocyanine.jpg">
+                </div>
+            </div>
+        </div>
+
+        <div class="separator"></div>
+
+        <div class="categorie">
+            <h1>En hiver? Aucun problème! Voici nos magiques batons glacés chaudffés!</h1>
+            <div class="produits-container">
+                <div class="produit">
+                    Baton glacé chauffé à la fraise
+                    <img src="assets/img/baton-1.jpg">
+                </div>
+                <div class="produit">
+                    Baton glacé chauffé saveur moutarde
+                    <img src="assets/img/baton-2.jpg">
+                </div>
+                <div class="produit">
+                    Baton glacé chauffé saveur framboise
+                    <img src="assets/img/baton-3.png">
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
