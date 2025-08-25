@@ -1,0 +1,95 @@
+/* ================== PALETTE DE COULEURS ===================================================== */
+:root {
+  --color-horizon: #6288a6;
+  --color-glacier:      #6ca8c0;
+  --color-burningsand:    #dd8f7b;
+  --color-millbroke:     #728090;
+  --radius: 10px;
+}
+
+
+
+
+
+/* ===============================================================================================================================*/
+/* ===============================================      contact.html            ==================================================*/
+/* ===============================================================================================================================*/
+
+/* ================== FORMULAIRE DE CONTACT ===================================== */
+.contact-card {
+  background: var(--color-burningsand);
+  padding: 24px;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+  max-width: 900px;
+  margin: 20px auto;
+}
+
+.contact-card h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+  color: black;
+}
+
+.contact-form {
+  display: grid;
+  gap: 14px;
+}
+
+.field { display: grid; gap: 6px; }
+
+.contact-form label { font-weight: 600; color: black; }
+
+
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #00000033;
+  background: #fff;
+  font: inherit;
+  color: var(--color-millbroke);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder { color: var(--color-glacier); }
+
+.btn-primary {
+  display: block;          
+  margin: 0;               
+  padding: 12px 18px;
+  border-radius: 10px;
+  background: var(--color-glacier);
+  color: black;
+  border: 1px solid var(--color-millbroke);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .2s ease, transform .05s ease, box-shadow .2s ease;
+}
+.btn-primary:hover { background: var(--color-horizon); }
+.btn-primary:active { transform: translateY(1px); }
+
+
+/* ================== FOOTER ================================================================ */
+.btn-contact {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--color-glacier);
+  color: black;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,.3);
+  transition: background .25s ease;
+}
