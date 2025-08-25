@@ -19,7 +19,7 @@ jobs:
           SERVER_IP: ${{ secrets.SERVER_IP }}
           APP_DIR: ${{ secrets.APP_DIR }}
         run: |
-          ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP " -i $secrets.SSH_PRIVATE_KEY
+          ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP " -i ${{ secrets.SSH_PRIVATE_KEY }}
             set -e
             cd $APP_DIR &&
             git remote set-url origin git@github.com:${{ github.repository }}.git &&
