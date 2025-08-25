@@ -1,0 +1,30 @@
+:root {
+    --main-background: gra;
+    --button-hover: #ffffff4f;
+}
+
+header {
+    margin: auto;
+    background: linear-gradient(90deg,rgba(0, 183, 255, 1) 15%, rgba(199, 87, 87, 1) 50%, rgb(237, 237, 237) 85%);;
+}
+
+nav {
+    margin: auto;
+    justify-content: center;
+}
+
+nav a {
+    text-align: center;
+    margin-inline-start: 10px;
+    margin-inline-end: 10px;
+    text-decoration: none;
+    color: black;
+    padding: 20px;
+    border-radius: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+nav a:hover {
+    background-color: var(--button-hover);
+}
