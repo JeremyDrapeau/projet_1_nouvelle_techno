@@ -4,8 +4,8 @@
 }
 
 @font-face {
-    font-family: creme;
-    src: url(assets/fonts/PlaywriteCA-Regular.ttf);
+    font-family: cursive-font;
+    src: url(../fonts/PlaywriteCA-Regular.ttf);
 }
 
 header {
@@ -159,7 +159,7 @@ nav a:hover {
   height: 200px;
 }
 .title {
-  font-family: creme;
+  font-family: cursive-font;
   font-size: 50px;
 }
 .vcontainer {
