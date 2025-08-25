@@ -19,10 +19,12 @@ jobs:
           SERVER_IP: ${{ secrets.SERVER_IP }}
           APP_DIR: ${{ secrets.APP_DIR }}
         run: |
-          ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $SERVER_USER@$SERVER_IP "
-          cd $APP_DIR &&
-          git remote set-url origin git@github.com:JeremyDrapeau/projet_1_nouvelle_techno.git &&  # Dont forget to change this!!!
-          git pull origin main &&
-          npm install &&
-          npm run build
+          ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP "
+            set -e
+            cd $APP_DIR &&
+            git remote set-url origin git@github.com:${{ github.repository }}.git &&
+            git pull origin main &&
+            npm install &&
+            npm run build &&
+            pm2 restart app_name || echo 'No PM2 app found'
           "
