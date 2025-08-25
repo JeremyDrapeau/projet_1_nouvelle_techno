@@ -1,4 +1,4 @@
-name: Deploy Server Project
+name: Deploy Ubuntu Server Project
 
 on:
   push:
