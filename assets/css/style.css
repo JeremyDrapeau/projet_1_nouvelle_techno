@@ -1,6 +1,7 @@
 :root {
     --main-background: gra;
     --button-hover: #ffffff4f;
+    --test: #000000
 }
 
 @font-face {
@@ -10,7 +11,90 @@
 
 header {
     margin: auto;
-    background: linear-gradient(90deg,rgba(0, 183, 255, 1) 15%, rgba(199, 87, 87, 1) 50%, rgb(237, 237, 237) 85%);;
+    animation: gradient-switch 0.5s infinite;
+}
+
+@keyframes gradient-switch {
+  0% {
+    background: linear-gradient(10deg,rgba(0, 183, 255, 1) 15%, rgba(199, 87, 87, 1) 50%, rgb(237, 237, 237) 85%);
+  }
+  10% {
+    background: linear-gradient(36deg,rgba(0, 183, 255, 1) 15%, rgba(199, 87, 87, 1) 50%, rgb(237, 237, 237) 85%);
+  }
+  20% {
+    background: linear-gradient(72deg,rgba(0, 183, 255, 1) 15%, rgba(199, 87, 87, 1) 50%, rgb(237, 237, 237) 85%);
+  }
+  30% {
+    background: linear-gradient(108deg,rgba(0, 183, 255, 1) 15%, rgba(199, 87, 87, 1) 50%, rgb(237, 237, 237) 85%);
+  }
+  40% {
+    background: linear-gradient(144deg,rgba(0, 183, 255, 1) 15%, rgba(199, 87, 87, 1) 50%, rgb(237, 237, 237) 85%);
+  }
+  50% {
+    background: linear-gradient(1185deg,rgba(0, 183, 255, 1) 15%, rgba(199, 87, 87, 1) 50%, rgb(237, 237, 237) 85%);
+  }
+  60% {
+    background: linear-gradient(216deg,rgba(0, 183, 255, 1) 15%, rgba(199, 87, 87, 1) 50%, rgb(237, 237, 237) 85%);
+  }
+  70% {
+    background: linear-gradient(252deg,rgba(0, 183, 255, 1) 15%, rgba(199, 87, 87, 1) 50%, rgb(237, 237, 237) 85%);
+  }
+  80% {
+    background: linear-gradient(288deg,rgba(0, 183, 255, 1) 15%, rgba(199, 87, 87, 1) 50%, rgb(237, 237, 237) 85%);
+  }
+  90% {
+    background: linear-gradient(324deg,rgba(0, 183, 255, 1) 15%, rgba(199, 87, 87, 1) 50%, rgb(237, 237, 237) 85%);
+  }
+  100% {
+    background: linear-gradient(350deg,rgba(0, 183, 255, 1) 15%, rgba(199, 87, 87, 1) 50%, rgb(237, 237, 237) 85%);
+  }
+}
+
+body {
+  margin: 0px;
+  animation: rainbow-bg 4s infinite;
+}
+
+@keyframes rainbow-bg {
+  0% {
+    background-color: rgb(255, 0, 0);
+  }
+  7% {
+    background-color: rgb(255, 127, 0);
+  }
+  14% {
+    background-color: rgb(255, 255, 0);
+  }
+  21% {
+    background-color: rgb(127, 255, 0);
+  }
+  28% {
+    background-color: rgb(0, 255, 0);
+  }
+  35% {
+    background-color: rgb(0, 255, 127);
+  }
+  42% {
+    background-color: rgb(0, 255, 255);
+  }
+  49% {
+    background-color: rgb(0, 127, 255);
+  }
+  56% {
+    background-color: rgb(0, 0, 255);
+  }
+  63% {
+    background-color: rgb(127, 0, 225);
+  }
+  72% {
+    background-color: rgb(255, 0, 255);
+  }
+  90% {
+    background-color: rgb(255, 0, 127);
+  }
+  100% {
+    background-color: rgb(255, 0, 0);
+  }
 }
 
 nav {
@@ -38,10 +122,10 @@ nav a:hover {
 
 /* ================== ANIMATION SUBTITLE ===================================================== */
 #subtitle {
-  animation: rainbow 2s infinite;
+  animation: rainbow 10s infinite;
 }
 #subtitle-div {
-  animation: grow-ungrow 1s infinite;
+  animation: grow-ungrow 0.38s infinite;
 }
 
 @keyframes grow-ungrow {
@@ -49,7 +133,7 @@ nav a:hover {
     transform: scale(1.2);
   }
   50% {
-    transform: scale(3);
+    transform: scale(1.5);
   }
   100% {
     transform: scale(1.2);
