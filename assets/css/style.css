@@ -1,6 +1,7 @@
 :root {
     --main-background: gra;
     --button-hover: #ffffff4f;
+    --test: #000000
 }
 
 @font-face {
@@ -10,7 +11,113 @@
 
 header {
     margin: auto;
-    background: linear-gradient(90deg,rgba(0, 183, 255, 1) 15%, rgba(199, 87, 87, 1) 50%, rgb(237, 237, 237) 85%);;
+    background: radial-gradient(red, blue);
+    animation: hue-rotate 1s infinite;
+    height: auto;
+    /*animation: gradient-switch 0.5s infinite;*/
+}
+
+@keyframes hue-rotate {
+  0% {
+    filter:hue-rotate(0deg);
+    background: radial-gradient(red, blue);
+  }
+  100% {
+    background: radial-gradient(360deg,red, blue);
+    filter: hue-rotate(360deg);
+  }
+}
+
+main h2{
+  font-family: cursive-font, sans-serif;
+  font-size: 42px;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  text-align: center;
+}
+
+@keyframes gradient-switch {
+  0% {
+    
+    background: linear-gradient(10deg,rgba(0, 183, 255, 1) 15%, rgba(199, 87, 87, 1) 50%, rgb(237, 237, 237) 85%);
+  }
+  10% {
+    background: linear-gradient(36deg,rgba(0, 183, 255, 1) 15%, rgba(199, 87, 87, 1) 50%, rgb(237, 237, 237) 85%);
+  }
+  20% {
+    background: linear-gradient(72deg,rgba(0, 183, 255, 1) 15%, rgba(199, 87, 87, 1) 50%, rgb(237, 237, 237) 85%);
+  }
+  30% {
+    background: linear-gradient(108deg,rgba(0, 183, 255, 1) 15%, rgba(199, 87, 87, 1) 50%, rgb(237, 237, 237) 85%);
+  }
+  40% {
+    background: linear-gradient(144deg,rgba(0, 183, 255, 1) 15%, rgba(199, 87, 87, 1) 50%, rgb(237, 237, 237) 85%);
+  }
+  50% {
+    background: linear-gradient(1185deg,rgba(0, 183, 255, 1) 15%, rgba(199, 87, 87, 1) 50%, rgb(237, 237, 237) 85%);
+  }
+  60% {
+    background: linear-gradient(216deg,rgba(0, 183, 255, 1) 15%, rgba(199, 87, 87, 1) 50%, rgb(237, 237, 237) 85%);
+  }
+  70% {
+    background: linear-gradient(252deg,rgba(0, 183, 255, 1) 15%, rgba(199, 87, 87, 1) 50%, rgb(237, 237, 237) 85%);
+  }
+  80% {
+    background: linear-gradient(288deg,rgba(0, 183, 255, 1) 15%, rgba(199, 87, 87, 1) 50%, rgb(237, 237, 237) 85%);
+  }
+  90% {
+    background: linear-gradient(324deg,rgba(0, 183, 255, 1) 15%, rgba(199, 87, 87, 1) 50%, rgb(237, 237, 237) 85%);
+  }
+  100% {
+    background: linear-gradient(350deg,rgba(0, 183, 255, 1) 15%, rgba(199, 87, 87, 1) 50%, rgb(237, 237, 237) 85%);
+  }
+}
+
+body {
+  margin: 0px;
+  animation: rainbow-bg 4s infinite;
+}
+
+@keyframes rainbow-bg {
+  0% {
+    background-color: rgb(255, 0, 0);
+  }
+  7% {
+    background-color: rgb(255, 127, 0);
+  }
+  14% {
+    background-color: rgb(255, 255, 0);
+  }
+  21% {
+    background-color: rgb(127, 255, 0);
+  }
+  28% {
+    background-color: rgb(0, 255, 0);
+  }
+  35% {
+    background-color: rgb(0, 255, 127);
+  }
+  42% {
+    background-color: rgb(0, 255, 255);
+  }
+  49% {
+    background-color: rgb(0, 127, 255);
+  }
+  56% {
+    background-color: rgb(0, 0, 255);
+  }
+  63% {
+    background-color: rgb(127, 0, 225);
+  }
+  72% {
+    background-color: rgb(255, 0, 255);
+  }
+  90% {
+    background-color: rgb(255, 0, 127);
+  }
+  100% {
+    background-color: rgb(255, 0, 0);
+  }
 }
 
 nav {
@@ -23,17 +130,92 @@ nav a {
     margin-inline-start: 10px;
     margin-inline-end: 10px;
     text-decoration: none;
-    color: black;
+    color: rgb(205, 205, 205);
     padding: 20px;
     border-radius: 50px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
+#compagny-description {
+  margin: auto;
+  width: 60%;
+}
 
+#compagny-description p {
+  text-align: center;
+  font-size: 2rem;
+}
+
+main img {
+  width: 50%;
+}
 
 nav a:hover {
     background-color: var(--button-hover);
+}
+
+/* ================== ANIMATION SUBTITLE ===================================================== */
+#subtitle {
+  animation: rainbow 4s infinite;
+  animation-delay: 2s;
+}
+#subtitle-div {
+  animation: grow-ungrow 0.38s infinite;
+}
+
+@keyframes grow-ungrow {
+  0% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes rainbow {
+  0% {
+    color: rgb(255, 0, 0);
+  }
+  7% {
+    color: rgb(255, 127, 0);
+  }
+  14% {
+    color: rgb(255, 255, 0);
+  }
+  21% {
+    color: rgb(127, 255, 0);
+  }
+  28% {
+    color: rgb(0, 255, 0);
+  }
+  35% {
+    color: rgb(0, 255, 127);
+  }
+  42% {
+    color: rgb(0, 255, 255);
+  }
+  49% {
+    color: rgb(0, 127, 255);
+  }
+  56% {
+    color: rgb(0, 0, 255);
+  }
+  63% {
+    color: rgb(127, 0, 225);
+  }
+  72% {
+    color: rgb(255, 0, 255);
+  }
+  90% {
+    color: rgb(255, 0, 127);
+  }
+  100% {
+    color: rgb(255, 0, 0);
+  }
 }
 
 /* ================== PALETTE DE COULEURS ===================================================== */
@@ -53,7 +235,6 @@ nav a:hover {
 /* ===============================================      contact.html            ==================================================*/
 /* ===============================================================================================================================*/
 
-/* ================== FORMULAIRE DE CONTACT ===================================== */
 .contact-card {
   background: var(--color-burningsand);
   padding: 24px;
@@ -64,10 +245,11 @@ nav a:hover {
 }
 
 .contact-card h2 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  margin: 0 0 16px 0;
-  color: black;
+  font-family: cursive-font, sans-serif;
+  font-size: 42px;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  text-align: center;
 }
 
 .contact-form {
@@ -159,8 +341,11 @@ nav a:hover {
   height: 200px;
 }
 .title {
-  font-family: cursive-font;
-  font-size: 50px;
+  font-family: cursive-font, sans-serif;
+  font-size: 42px;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  text-align: center;
 }
 .vcontainer {
   display: flex;
@@ -215,6 +400,64 @@ nav a:hover {
   .categorie>h1 {
       font-size: x-large;
   }
+  /* ========================================================================== */
+  /* =============== Index.html ======================== */
+  /* ========================================================================== */
+
+  #subtitle {
+    width: 80%;
+    font-size: 0.65rem;
+    margin: auto;
+    text-align: center;
+  }
+
+  main img {
+    width: 90%;
+    margin-top: 40px;
+  }
+
+  header {
+    width: 100%;
+  }
+
+  header nav {
+    flex-direction: column;
+  }
+  header nav a {
+    width: 20%;
+    margin: auto;
+  }
+  #compagny-description {
+    width: 90%;
+  }
+
+}
+
+/* ===============================================================================================================================*/
+/* ===============================================      propos.html           ==================================================*/
+/* ===============================================================================================================================*/
 
 
+.propos-container {
+  max-width: 900px;              
+  margin: 40px auto;             
+  padding: 20px;
+  background-color: #ffffffd9;   
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.2);  
+  text-align: center;
+}
+
+.propos-container h1 {
+  font-family: cursive-font, sans-serif;
+  font-size: 42px;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.propos-container p {
+  font-size: 18px;
+  line-height: 1.6;              
+  color: #333;
+  margin-bottom: 16px;
 }
