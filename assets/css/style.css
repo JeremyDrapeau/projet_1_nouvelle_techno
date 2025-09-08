@@ -11,11 +11,26 @@
 
 header {
     margin: auto;
-    animation: gradient-switch 0.5s infinite;
+    background: radial-gradient(red, blue);
+    animation: hue-rotate 1s infinite;
+    height: auto;
+    /*animation: gradient-switch 0.5s infinite;*/
+}
+
+@keyframes hue-rotate {
+  0% {
+    filter:hue-rotate(0deg);
+    background: radial-gradient(red, blue);
+  }
+  100% {
+    background: radial-gradient(360deg,red, blue);
+    filter: hue-rotate(360deg);
+  }
 }
 
 @keyframes gradient-switch {
   0% {
+    
     background: linear-gradient(10deg,rgba(0, 183, 255, 1) 15%, rgba(199, 87, 87, 1) 50%, rgb(237, 237, 237) 85%);
   }
   10% {
@@ -107,14 +122,26 @@ nav a {
     margin-inline-start: 10px;
     margin-inline-end: 10px;
     text-decoration: none;
-    color: black;
+    color: rgb(205, 205, 205);
     padding: 20px;
     border-radius: 50px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
+#compagny-description {
+  margin: auto;
+  width: 60%;
+}
 
+#compagny-description p {
+  text-align: center;
+  font-size: 2rem;
+}
+
+main img {
+  width: 50%;
+}
 
 nav a:hover {
     background-color: var(--button-hover);
@@ -122,7 +149,8 @@ nav a:hover {
 
 /* ================== ANIMATION SUBTITLE ===================================================== */
 #subtitle {
-  animation: rainbow 10s infinite;
+  animation: rainbow 4s infinite;
+  animation-delay: 2s;
 }
 #subtitle-div {
   animation: grow-ungrow 0.38s infinite;
@@ -361,6 +389,35 @@ nav a:hover {
   .categorie>h1 {
       font-size: x-large;
   }
+  /* ========================================================================== */
+  /* =============== Index.html ======================== */
+  /* ========================================================================== */
 
+  #subtitle {
+    width: 80%;
+    font-size: 0.65rem;
+    margin: auto;
+    text-align: center;
+  }
+
+  main img {
+    width: 90%;
+    margin-top: 40px;
+  }
+
+  header {
+    width: 100%;
+  }
+
+  header nav {
+    flex-direction: column;
+  }
+  header nav a {
+    width: 20%;
+    margin: auto;
+  }
+  #compagny-description {
+    width: 90%;
+  }
 
 }
