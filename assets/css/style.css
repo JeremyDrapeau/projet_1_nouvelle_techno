@@ -246,7 +246,7 @@ nav a:hover {
 
 .contact-card h2 {
   font-family: cursive-font, sans-serif;
-  font-size: 42px;
+  font-size: 2.5rem; /* adaptatif */
   margin-bottom: 20px;
   color: #2c3e50;
   text-align: center;
@@ -259,8 +259,10 @@ nav a:hover {
 
 .field { display: grid; gap: 6px; }
 
-.contact-form label { font-weight: 600; color: black; }
-
+.contact-form label {
+  font-weight: 600;
+  color: black;
+}
 
 .contact-form input,
 .contact-form textarea,
@@ -280,7 +282,9 @@ nav a:hover {
 }
 
 .contact-form input::placeholder,
-.contact-form textarea::placeholder { color: var(--color-glacier); }
+.contact-form textarea::placeholder {
+  color: var(--color-glacier);
+}
 
 .btn-primary {
   display: block;          
@@ -297,7 +301,7 @@ nav a:hover {
 .btn-primary:hover { background: var(--color-horizon); }
 .btn-primary:active { transform: translateY(1px); }
 
-
+/* === États d’erreur === */
 .input-invalid {
   border: 2px solid #b00020 !important;
   outline: none;
@@ -320,12 +324,48 @@ nav a:hover {
   display: none;
 }
 
-
 .contact-form input:focus,
 .contact-form textarea:focus {
   box-shadow: 0 0 0 2px rgba(98,136,166,.25);
   outline: none;
 }
+
+
+/* Tablettes */
+@media (max-width: 900px) {
+  .contact-card {
+    max-width: 90%;
+    padding: 16px;
+  }
+
+  .contact-card h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 600px) {
+  .contact-card {
+    max-width: 95%;
+    padding: 12px;
+  }
+
+  .contact-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 1rem;
+  }
+
+  .btn-primary {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+  }
+}
+
 
 
 /* ================== FOOTER ================================================================ */
