@@ -20,28 +20,28 @@
     </header>
 
   <main>
-
     <section class="contact-card">
       <h2>Écrivez-moi&nbsp;!</h2>
 
-      
-      <form class="contact-form">
+      <form id="contactForm" class="contact-form" novalidate>
+        <div id="formAlert" class="form-alert" aria-live="polite" style="display:none"></div>
+
         <div class="field">
           <label for="nom">Nom</label>
-          <input id="nom" type="text" placeholder="Entrez votre nom">
+          <input id="nom" name="nom" type="text" placeholder="Entrez votre nom" required minlength="2">
         </div>
 
         <div class="field">
           <label for="courriel">Courriel</label>
-          <input id="courriel" type="email" placeholder="Entrez votre courriel">
+          <input id="courriel" name="courriel" type="email" placeholder="Entrez votre courriel" required>
         </div>
 
         <div class="field">
           <label for="message">Commentaire</label>
-          <textarea id="message" rows="6" placeholder="Votre message..."></textarea>
+          <textarea id="message" name="message" rows="6" placeholder="Votre message..." required minlength="5"></textarea>
         </div>
 
-        <button type="button" class="btn-primary">Envoyer!</button>
+        <button type="submit" class="btn-primary">Envoyer!</button>
       </form>
     </section>
   </main>
@@ -49,5 +49,88 @@
   <footer>
     <button class="btn-contact">Contactez-moi!</button>
   </footer>
+
+  <!-- Validation JS -->
+  <script>
+    (function () {
+      console.log("Validation JS chargé !");
+
+      const form = document.getElementById('contactForm');
+      const fields = {
+        nom: document.getElementById('nom'),
+        courriel: document.getElementById('courriel'),
+        message: document.getElementById('message')
+      };
+      const alertBox = document.getElementById('formAlert');
+
+      function clearErrors() {
+        alertBox.style.display = 'none';
+        alertBox.textContent = '';
+        Object.values(fields).forEach(el => {
+          el.classList.remove('input-invalid');
+          const err = el.parentElement.querySelector('.error-text');
+          if (err) err.remove();
+        });
+      }
+
+      function showFieldError(el, msg) {
+        el.classList.add('input-invalid');
+        const d = document.createElement('div');
+        d.className = 'error-text';
+        d.textContent = msg;
+        el.parentElement.appendChild(d);
+      }
+
+      function validate() {
+        clearErrors();
+        let ok = true;
+
+        if (fields.nom.value.trim().length < 2) {
+          ok = false;
+          showFieldError(fields.nom, 'Le nom est obligatoire (2 caractères minimum).');
+        }
+
+        if (fields.courriel.value.trim() === '' || !fields.courriel.checkValidity()) {
+          ok = false;
+          showFieldError(fields.courriel, 'Veuillez entrer un courriel valide (ex. nom@domaine.com).');
+        }
+
+        if (fields.message.value.trim().length < 5) {
+          ok = false;
+          showFieldError(fields.message, 'Le message est obligatoire (5 caractères minimum).');
+        }
+
+        if (!ok) {
+          alertBox.textContent = 'Veuillez corriger les champs en rouge.';
+          alertBox.style.display = 'block';
+        }
+        return ok;
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!validate()) return;
+
+        // Démo succès
+        alertBox.style.display = 'block';
+        alertBox.style.background = '#e8f5e9';
+        alertBox.style.color = '#1b5e20';
+        alertBox.style.borderColor = '#1b5e20';
+        alertBox.textContent = 'Message envoyé, merci!';
+        form.reset();
+      });
+
+      Object.values(fields).forEach(el => {
+        el.addEventListener('input', () => {
+          el.classList.remove('input-invalid');
+          const err = el.parentElement.querySelector('.error-text');
+          if (err) err.remove();
+          if (alertBox.style.display === 'block' && alertBox.style.background !== 'rgb(232, 245, 233)') {
+            alertBox.style.display = 'none';
+          }
+        });
+      });
+    })();
+  </script>
 </body>
 </html>

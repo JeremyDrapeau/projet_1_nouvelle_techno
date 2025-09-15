@@ -298,6 +298,36 @@ nav a:hover {
 .btn-primary:active { transform: translateY(1px); }
 
 
+.input-invalid {
+  border: 2px solid #b00020 !important;
+  outline: none;
+  box-shadow: 0 0 0 2px #b0002022;
+}
+
+.error-text {
+  color: #b00020;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.form-alert {
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  background: #ffe9e9;
+  color: #b00020;
+  border-radius: var(--radius, 10px);
+  border: 1px solid #b00020;
+  display: none;
+}
+
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  box-shadow: 0 0 0 2px rgba(98,136,166,.25);
+  outline: none;
+}
+
+
 /* ================== FOOTER ================================================================ */
 .btn-contact {
   position: fixed;
